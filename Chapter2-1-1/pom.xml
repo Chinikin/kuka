@@ -3,6 +3,17 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
+	<repositories>
+		<repository>
+           <id>releases</id><!--这个ID需要与你的release仓库的Repository ID一致-->
+           <url>http://106.14.212.144:8081/nexus/content/repositories/releases</url>
+   		 </repository>
+		<snapshotRepository>
+	        <id>snapshots</id><!--这个ID需要与你的snapshots仓库的Repository ID一致-->
+	        <url>http://106.14.212.144:8081/nexus/content/repositories/snapshots</url>
+	    </snapshotRepository>
+	</repositories>
+
 	<groupId>com.didispace</groupId>
 	<artifactId>Chapter2-1-1</artifactId>
 	<version>1.0.0</version>
@@ -24,6 +35,12 @@
 
 	<dependencies>
 		<dependency>
+	            <groupId>org.freemarker</groupId>
+	            <artifactId>freemarker</artifactId>
+	            <version>2.3.23</version>
+	        </dependency>
+	
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
@@ -38,8 +55,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
-
+		<dependency>
+		    <groupId>taobao.sdk</groupId>
+		    <artifactId>taobao-sdk</artifactId>
+		    <version>1.0.0</version>
+		</dependency>
+	
 	</dependencies>
 	
 	<build>
